@@ -1,15 +1,20 @@
 #include "Message.h"
 #include "TrafficState.h"
 
-namespace FiniteStateMachine
+class StateMachine
 {
-    class StateMachine
+public:
+    StateMachine();
+    void handle(Message m);
+    inline TrafficState getCurState() const { return curState; };
+    inline TrafficState getPrevState() const { return prevState; };
+    inline void setCurState(TrafficState ts)
     {
-    public:
-        void handle(Message m);
-
-    private:
-        TrafficState curState;
+        prevState = curState;
+        curState = ts;
     }
 
+private:
+    TrafficState curState;
+    TrafficState prevState;
 };
