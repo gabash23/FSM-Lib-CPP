@@ -13,9 +13,6 @@ _Note: this finite state machine only covers the traffic light for now, but I ca
 
 - Instantiate: `StateMachine sm;`
 - There are four states stored in an enum: `Green, Yellow, Red, BlinkingRed`
-
-* testing mixed lists
-
 - There are four messages stored in an enum: `ChangeLight, EncounteredProblem, FixedProblem, Print`
 - _All methods are void_
 - `StateMachine::handle(Message m)`, where `Message m` is the transition, handle transitions between states
