@@ -23,7 +23,7 @@ void StateMachine::handle(Message m)
     if (m == Message::Print)
         cout << "The traffic light is currently: " << toString(getCurState()) << '\n';
 
-    else if ((m == Message::ChangeLight && getCurState() != TrafficState::BlinkingRed) || m == Message::EncounteredProblem && getCurState() == TrafficState::BlinkingRed)
+    else if ((m == Message::ChangeLight && getCurState() != TrafficState::BlinkingRed) || m == Message::FixedProblem && getCurState() == TrafficState::BlinkingRed)
         setCurState(transitions[getCurState()]);
 
     else if (m == Message::EncounteredProblem && getCurState() != TrafficState::BlinkingRed)
