@@ -13,6 +13,11 @@ public:
         prevState = curState;
         curState = ts;
     }
+    inline void restart()
+    {
+        prevState = TrafficState::Green;
+        curState = TrafficState::Green;
+    }
 
 private:
     TrafficState curState;
