@@ -1,2 +1,2 @@
 fsm: test.cpp
-	clang++ test.cpp -std=c++14 -o test
+	clang++ main.cpp -std=c++14 -o fsm
